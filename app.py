@@ -8,7 +8,7 @@ from src.pipeline.km_train import CustomData
 from src.pipeline.km_train import kmeans_model, find_best_k, predict_pipe
 import plotly.express as px
 import plotly.graph_objs as go
-from src.analysis import cluster2d, cluster3d, load_model, convert_df, upload_file, show_gender, clustered
+from src.analysis import cluster2d, cluster3d, load_model, convert_df, show_gender, clustered
 
 ## Dataset
 dataset = pd.read_csv('data/Mall_Customers.csv')

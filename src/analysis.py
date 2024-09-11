@@ -5,7 +5,7 @@ import streamlit as st
 import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
-from src.pipeline.km_train import kmeans_model, find_best_k
+from src.pipeline.km_train import kmeans_model
 from src.utils import load_object
 
 dataset = pd.read_csv('data/Mall_Customers.csv')

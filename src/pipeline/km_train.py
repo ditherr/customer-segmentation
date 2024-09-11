@@ -1,10 +1,9 @@
 import os
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
-from src.utils import load_object, save_object
+from src.utils import load_object
 
 
 # K-Means model
