@@ -21,8 +21,8 @@ def transform_cluster(data):
 
 
 ## Load model
-def load_model(cluster, data):
-    model = kmeans_model(cluster, data)
+def load_model(cluster, data, random):
+    model = kmeans_model(cluster, data, random)
     data_clustered = dataset.copy()
     data_clustered['Cluster'] = model.labels_
     data = transform_cluster(data_clustered)

@@ -7,8 +7,8 @@ from src.utils import load_object
 
 
 # K-Means model
-def kmeans_model(k, data):      
-    model = KMeans(n_clusters=k, init='k-means++', random_state=12)
+def kmeans_model(k, data, random):      
+    model = KMeans(n_clusters=k, init='k-means++', random_state=random)
     model.fit(data)
     
     return model

@@ -42,17 +42,17 @@ def main():
         cl, ch = st.columns(2)
         with cl:
             cluster = st.slider("Choose Cluster", 1, 10)
+            random = st.slider("Random State (try to see the different)", 2, 12, step=2)
         with ch:
             st.write("**Choose the Cluster style**")
             cl2d = st.checkbox("Cluster 2D")
             cl3d = st.checkbox("Cluster 3D")
             
-            
         if cl2d:
-            data1d, model = load_model(cluster, X)
+            data1d, model = load_model(cluster, X, random)
             cluster2d(data1d, model)
         if cl3d:
-            data2d, model = load_model(cluster, X2)
+            data2d, model = load_model(cluster, X2, random)
             cluster3d(data2d, model)
     
     st.subheader('🕵️Try to Predict')
