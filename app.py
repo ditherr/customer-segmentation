@@ -5,7 +5,7 @@ import numpy as np
 import streamlit as st
 import time
 from src.pipeline.km_train import CustomData
-from src.pipeline.km_train import kmeans_model, find_best_k, predict_pipe
+from src.pipeline.km_train import predict_pipe
 import plotly.express as px
 import plotly.graph_objs as go
 from src.analysis import cluster2d, cluster3d, load_model, convert_df, show_gender, clustered

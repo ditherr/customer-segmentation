@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import sklearn
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 import plotly.express as px
