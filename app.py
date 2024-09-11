@@ -49,11 +49,11 @@ def main():
             
             
         if cl2d:
-            data, model = load_model(cluster, 1, X)
-            cluster2d(data, model)
+            data1d, model = load_model(cluster, X)
+            cluster2d(data1d, model)
         if cl3d:
-            data, model = load_model(cluster, 2, X2)
-            cluster3d(data, model)
+            data2d, model = load_model(cluster, X2)
+            cluster3d(data2d, model)
     
     st.subheader('🕵️Try to Predict')
     st.markdown("""The prediction use the dataset above, you can use your dataset but you need to :blue-background[**have same features or columns like ours**].\

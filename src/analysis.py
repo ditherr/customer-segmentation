@@ -21,19 +21,12 @@ def transform_cluster(data):
 
 
 ## Load model
-def load_model(cluster, model, data):
-    if model == 1:
-        model = kmeans_model(cluster, data)
-        data_clustered = dataset.copy()
-        data_clustered['Cluster'] = model.labels_
-        data = transform_cluster(data_clustered)
-        return data, model
-    elif model == 2:
-        model = kmeans_model(cluster, data)
-        data_clustered = dataset.copy()
-        data_clustered['Cluster'] = model.labels_
-        data = transform_cluster(data_clustered)
-        return data, model
+def load_model(cluster, data):
+    model = kmeans_model(cluster, data)
+    data_clustered = dataset.copy()
+    data_clustered['Cluster'] = model.labels_
+    data = transform_cluster(data_clustered)
+    return data, model
 
 
 ## Draw a 2D Cluster
