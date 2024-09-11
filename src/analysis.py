@@ -11,9 +11,6 @@ from src.utils import load_object
 dataset = pd.read_csv('data/Mall_Customers.csv')
 coloring = ["red", "green", "blue", "purple", "orange", "magenta", "cyan", "yellow", "brown", "indigo"]
 
-kmeans_m = os.path.join('data', 'model_kmeans.pkl')
-pred_model = load_object(kmeans_m)
-
 ## Transform as a string for coloring purpose
 def transform_cluster(data):
     data = data.sort_values(by='Cluster', ascending=True)
