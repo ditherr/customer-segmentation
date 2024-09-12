@@ -93,7 +93,16 @@ def main():
                         
                         # predict the result
                         result = predict_pipe(df)
-                        st.success(f'Based on your input, You will clustered into **Cluster {result}**', icon="🔎")
+                        if result == 0:
+                            st.success(f'Based on your input, You are clustered into **Cluster {result}** and joined by people who **earn high but spend less**.', icon="🔎")
+                        elif result == 1:
+                            st.success(f'Based on your input, You are clustered into **Cluster {result}** and joined by people who **more average in terms of earn and spend**.', icon="🔎")
+                        elif result == 2:
+                            st.success(f'Based on your input, You are clustered into **Cluster {result}** and joined by people who **earn high also spend more**.', icon="🔎")
+                        elif result == 3:
+                            st.success(f'Based on your input, You are clustered into **Cluster {result}** and joined by people who **earn less but spend more**.', icon="🔎")
+                        else:
+                            st.success(f'Based on your input, You are clustered into **Cluster {result}** and joined by people who **earn less also spend less**.', icon="🔎")
             
 
         else:
@@ -103,7 +112,6 @@ def main():
                 data_sample = pd.read_csv(uploaded_file)
                 result = predict_pipe(data_sample)
                 data_sample['Cluster'] = result
-                
                 
                 progress_text = "Your Data is being Clustered and Analyzed. Please wait."
                 my_bar = st.progress(0, text=progress_text)
@@ -115,7 +123,18 @@ def main():
                 
                 # Show success message
                 st.success("🎉 **Congrats! Your data has been successfully clustered**")
-                st.write(data_sample)
+                con = st.container()
+                con.write(data_sample)
+                note = '''
+                **Note**:
+                - **`cluster [0]`** ➡ earn high but spend less.
+                - **`cluster [1`]** ➡ more average in terms of earning and spending.
+                - **`cluster [2]`** ➡ earn high, spend more.
+                - **`cluster [3]`** ➡ earn less but spend more.
+                - **`cluster [4]`** ➡ earn less, spend less.
+                '''
+                
+                con.markdown(note)
                 
                 
                 show_gender(data_sample)
